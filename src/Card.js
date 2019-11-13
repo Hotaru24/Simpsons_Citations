@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import axios from 'axios';
+import './Card.css';
 
 
 class Card extends React.Component {
@@ -26,18 +27,18 @@ class Card extends React.Component {
   
  render() {
     return (
-        <div>
+        <Fragment>
             <figure className="QuoteCard">
-                <div>
+                <div id="img">
                     <img src={this.state.image} />   
                 </div> 
-                <div>
-                    <p>{this.state.quote}</p> 
-                    <p>{this.state.character}</p>
+                <div className="quoteName">
+                    <p id="quote">{this.state.quote}</p> 
+                    <h3>{this.state.character}</h3>
                 </div>
                 <button id="button" onClick={this.componentWillMount}>Next</button>
             </figure>
-        </div>
+        </Fragment>
     );
   }
 }
